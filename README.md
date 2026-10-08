@@ -1,2 +1,2 @@
-# MDIA-1620.1
+# MDIA-1620
 Stable

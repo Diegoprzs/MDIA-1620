@@ -33,8 +33,8 @@ let pass = {
 }
 
 
-const HORSES = [ash, grass, pass]
-// let horses = [ash, grass, pass] //
+let horses = [ash, grass, pass]
+
 
 let cookie = {
     name: "Cookie",
@@ -47,8 +47,8 @@ let cookie = {
     lateFee: .5
 }
 
-HORSES[3] = cookie
-/// horses.push(cookie) //
+
+horses.push(cookie)
 
 
 ash.isHungry = false
@@ -57,15 +57,14 @@ pass.isHungry = true
 cookie.isHungry = true
 
 
-let totalStalls = 6
+let totalStalls = 10
 
 
-function logAvailableStalls(numberOfHORSES){
-    console.log(totalStalls - numberOfHORSES)
+function logStallsAvailable(totalStalls, numberOfHorses){
+    console.log("There's room for " + (totalStalls - numberOfHorses) + " horses.")
 }
 
-
-logAvailableStalls(4)
+logStallsAvailable(10, horses.length)
 
 
 function logLateRent(horse){

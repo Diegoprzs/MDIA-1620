@@ -34,7 +34,7 @@ let pass = {
 
 
 const HORSES = [ash, grass, pass]
-
+// let horses = [ash, grass, pass] //
 
 let cookie = {
     name: "Cookie",
@@ -48,6 +48,7 @@ let cookie = {
 }
 
 HORSES[3] = cookie
+/// horses.push(cookie) //
 
 
 ash.isHungry = false

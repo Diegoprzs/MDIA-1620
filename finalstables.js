@@ -128,3 +128,59 @@ for (let horse of horses){
 }
 
 
+//-----------Horse movement functions-----------------//
+
+function moveHorses(isGettingDark, horsesToMove){
+    for (let horse of horsesToMove){
+        if (isGettingDark){
+            if (horse.isHorseInside === false){
+                horse.toggleLocation()
+                console.log("It's getting dark! " + horse.name + " goes back inside for the night.")
+            }
+        } else {
+            if (horse.isHorseInside === true){
+                horse.toggleLocation()
+                console.log(horse.name + " has been moved outside to spend time in the sun.")
+            }
+        }
+    }
+}
+
+console.log("--- Morning! ---")
+moveHorses(false, [ash])
+moveHorses(false, [pass, grass])
+
+
+//------------------------- Feeding horses -------------------------//
+function feedHorses(horsesToFeed){
+    for (let horse of horsesToFeed){
+        if (!horse.isHorseInside){
+            horse.toggleLocation()
+            console.log(horse.name + " hears the feed bucket and runs inside!")
+        }
+    }
+
+    for (let horse of horsesToFeed){
+        if (horse.isHungry){
+            console.log(horse.name + " happily gobbles up some " + horse.favSnack + ".")
+        } else {
+            console.log(horse.name + " wasn't very hungry, but still eats some " + horse.favSnack + ".")
+        }
+        horse.isHungry = false
+    }
+}
+
+console.log("--- Food! ---")
+feedHorses(horses)
+
+
+console.log("--- Afternoon ---")
+moveHorses(false, [grass, cookie])
+
+
+console.log("--- Bedtime! ---")
+moveHorses(true, [ash, grass, pass, cookie])
+
+
+
+
